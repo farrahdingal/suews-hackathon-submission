@@ -1,0 +1,9 @@
+| Time (UTC) | Tool | Why | Short result |
+|---|---|---|---|
+| 2026-06-24T13:59:17+00:00 | `assess_readiness` | Confirm manifest, official config/forcing files, socio-economic sidecars, and supy runtime before modelling. | OK: UDA-city, 10 neighbourhoods, supy 2026.6.5 |
+| 2026-06-24T13:59:21+00:00 | `validate_config` | Validate canonical UDA-city config and locked physics before allowing any SUEWS run. | OK: config validates; 10 gridivs; NARP radiation; classic OHM; QF off |
+| 2026-06-24T14:00:57+00:00 | `run_suews_present` | Run official present hot-humid SUEWS scenario for all 10 neighbourhoods. | OK: present completed for 10 sites x 26,208 steps; supy 2026.6.5; saved outputs/suews/present_results.parquet |
+| 2026-06-24T14:01:59+00:00 | `run_suews_future` | Run official future hot-humid SUEWS scenario for all 10 neighbourhoods. | OK: future completed for 10 sites x 26,208 steps; supy 2026.6.5; saved outputs/suews/future_results.parquet |
+| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_present` | Translate SUEWS dangerous-heat hours into hazard/exposure/vulnerability/risk ranks. | OK: present bridge built at T2>35 C after 14 spin-up days; top risk: Kampong Lama |
+| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_future` | Translate SUEWS dangerous-heat hours into hazard/exposure/vulnerability/risk ranks. | OK: future bridge built at T2>35 C after 14 spin-up days; top risk: Kampong Lama |
+| 2026-06-24T14:02:40+00:00 | `combine_hazard_risk_results` | Compare hottest neighbourhoods with highest risk across present and future scenarios. | OK: combined present/future hazard-risk table; Spearman present=-0.05, future=0.17 |
