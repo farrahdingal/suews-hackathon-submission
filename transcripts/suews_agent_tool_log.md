@@ -1,9 +1,21 @@
-| Time (UTC) | Tool | Why | Short result |
+# SUEWS-agent tool-call log
+
+This log records the SUEWS-agent tools used to generate the final SUEWS Community Hackathon analysis. It is included so reviewers can see that the workflow was agent-assisted and that the model was not run until the required readiness and configuration checks had passed.
+
+The later WBGT screening and time-of-day robustness checks were derived from the already completed SUEWS outputs. They did not rerun SUEWS.
+
+| Time (UTC) | Tool | Why the tool was called | Short result |
 |---|---|---|---|
-| 2026-06-24T13:59:17+00:00 | `assess_readiness` | Confirm manifest, official config/forcing files, socio-economic sidecars, and supy runtime before modelling. | OK: UDA-city, 10 neighbourhoods, supy 2026.6.5 |
-| 2026-06-24T13:59:21+00:00 | `validate_config` | Validate canonical UDA-city config and locked physics before allowing any SUEWS run. | OK: config validates; 10 gridivs; NARP radiation; classic OHM; QF off |
-| 2026-06-24T14:00:57+00:00 | `run_suews_present` | Run official present hot-humid SUEWS scenario for all 10 neighbourhoods. | OK: present completed for 10 sites x 26,208 steps; supy 2026.6.5; saved outputs/suews/present_results.parquet |
-| 2026-06-24T14:01:59+00:00 | `run_suews_future` | Run official future hot-humid SUEWS scenario for all 10 neighbourhoods. | OK: future completed for 10 sites x 26,208 steps; supy 2026.6.5; saved outputs/suews/future_results.parquet |
-| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_present` | Translate SUEWS dangerous-heat hours into hazard/exposure/vulnerability/risk ranks. | OK: present bridge built at T2>35 C after 14 spin-up days; top risk: Kampong Lama |
-| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_future` | Translate SUEWS dangerous-heat hours into hazard/exposure/vulnerability/risk ranks. | OK: future bridge built at T2>35 C after 14 spin-up days; top risk: Kampong Lama |
-| 2026-06-24T14:02:40+00:00 | `combine_hazard_risk_results` | Compare hottest neighbourhoods with highest risk across present and future scenarios. | OK: combined present/future hazard-risk table; Spearman present=-0.05, future=0.17 |
+| 2026-06-24T13:59:17+00:00 | `assess_readiness` | I called this first to confirm that the workflow was using the official UDA-city dataset entry point, manifest, configuration files, forcing files, socio-economic sidecars, and SUEWS/SuPy runtime before any modelling was attempted. | The readiness check passed. The agent identified the UDA-city workflow, confirmed ten neighbourhoods, and reported SuPy 2026.6.5. |
+| 2026-06-24T13:59:21+00:00 | `validate_config` | I called this second to validate the canonical UDA-city SUEWS configuration and locked modelling assumptions before allowing SUEWS to run. | The configuration validation passed. The agent confirmed ten grid cells, NARP radiation, classic OHM storage heat, and QF/emissions switched off. |
+| 2026-06-24T14:00:57+00:00 | `run_suews_present` | After readiness and validation passed, I called this tool to run the official present hot-humid SUEWS scenario for all ten UDA-city neighbourhoods. | The present scenario completed for ten sites and 26,208 hourly steps per site. Outputs were saved as `outputs/suews/present_results.parquet`. |
+| 2026-06-24T14:01:59+00:00 | `run_suews_future` | I called this tool to run the official future hot-humid +2.5 C humidity-preserving pseudo-warming scenario for all ten neighbourhoods. | The future scenario completed for ten sites and 26,208 hourly steps per site. Outputs were saved as `outputs/suews/future_results.parquet`. |
+| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_present` | I called this tool to translate present-scenario dangerous-heat hours into a UNDRR-style bridge from hazard to people, combining hazard, exposure, and vulnerability into a socio-economic heat-risk rank. | The present risk bridge was built using hourly mean `T2 > 35 C` after the 14-day spin-up period. Kampong Lama ranked as the highest-risk neighbourhood. |
+| 2026-06-24T14:02:22+00:00 | `apply_risk_bridge_future` | I called this tool to repeat the same hazard, exposure, and vulnerability risk translation for the official +2.5 C future stress test. | The future risk bridge was built using the same `T2 > 35 C` threshold and the same socio-economic framing. Kampong Lama again ranked as the highest-risk neighbourhood. |
+| 2026-06-24T14:02:40+00:00 | `combine_hazard_risk_results` | I called this tool to compare the physically hottest neighbourhoods with the highest-risk neighbourhoods across the present and future scenarios. | The combined table showed that the hottest neighbourhoods were not necessarily the most dangerous to people. Jade Gardens was the hottest by dry-bulb dangerous-heat hours, while Kampong Lama was the highest-risk neighbourhood. The hazard-risk rank correlation was weak. |
+
+## Post-processing added for the final page
+
+After the SUEWS-agent workflow had already produced the official present and future outputs, I added a non-SUEWS post-processing robustness check. This used the completed hourly outputs to summarise heat by time of day and to create a humidity-aware WBGT screening proxy. This step was used to make the interpretation more robust for outdoor workers and heat-health planning, but it did not change the official SUEWS runs.
+
+The post-processing uses SUEWS output variables `T2`, `RH2`, `U10`, and `Kdown` after the same 14-day spin-up period. It reports dry-bulb dangerous-heat hours, WBGT screening hours, and hot-sunny-low-wind hours by neighbourhood and by time of day. A full occupational WBGT assessment would require measured or modelled natural wet bulb and black globe temperature; therefore the WBGT result is presented as a screening proxy rather than as instrument-grade WBGT.
