@@ -176,6 +176,24 @@ li{margin:6px 0}
 .time-card b{display:block;color:var(--slate)}
 .time-card span{color:var(--muted);font-size:12px}
 .risk-note{margin:14px 0 0;padding:11px 12px;border:1px dashed #cbd7df;border-radius:8px;background:#fbfdfe;color:#536270}
+.driver-panel{margin:18px 0 22px;padding:18px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdfe);box-shadow:var(--soft-shadow)}
+.driver-panel h3{margin-top:0}
+.driver-intro{margin:0 0 14px;max-width:960px}
+.driver-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.driver-card{border:1px solid var(--line);border-radius:8px;background:white;padding:12px;box-shadow:0 5px 14px rgba(22,32,51,.05);transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.driver-card.top-priority{border-color:var(--gold);box-shadow:0 10px 22px rgba(247,181,56,.18);transform:translateY(-1px)}
+.driver-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.driver-name{display:block;color:var(--slate);font-weight:900;line-height:1.2}
+.driver-rank{white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:#f8fbfd;color:#344655;padding:2px 7px;font-size:11px;font-weight:850}
+.top-priority .driver-rank{border-color:var(--gold);background:#fff8eb;color:#6f4500}
+.driver-score{margin:11px 0 10px;color:var(--slate);font-weight:900;font-variant-numeric:tabular-nums}
+.driver-row{display:grid;grid-template-columns:78px minmax(0,1fr) 42px;gap:8px;align-items:center;margin-top:7px;font-size:12px;color:#455462}
+.driver-track{height:8px;border-radius:999px;background:color-mix(in srgb,var(--line) 58%,white);overflow:hidden}
+.driver-fill{display:block;height:100%;width:var(--w);border-radius:999px;background:var(--wave);transition:width .45s ease}
+.driver-fill.hazard{background:var(--orange)}
+.driver-fill.exposure{background:var(--sky)}
+.driver-fill.vulnerability{background:var(--green)}
+.driver-value{text-align:right;color:var(--slate);font-weight:850;font-variant-numeric:tabular-nums}
 .numbers-panel{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 .numbers-panel table{margin-top:10px;box-shadow:none}
 footer{margin-top:50px;padding:24px;border-radius:8px;background:var(--dark);color:rgba(255,255,255,.72);font-size:13px}
@@ -188,6 +206,7 @@ footer a{color:#ffd166}
   .mark{width:104px}
   table{display:block;overflow-x:auto;white-space:nowrap}
   .rank-row{grid-template-columns:30px minmax(115px,1fr) minmax(100px,1.4fr) 58px}
+  .driver-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:620px){
   h1{font-size:34px}
@@ -196,9 +215,11 @@ footer a{color:#ffd166}
   .term-note dl{grid-template-columns:1fr}
   .rank-row{grid-template-columns:28px 1fr 62px}
   .rank-track{grid-column:2/4}
+  .driver-cards{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
-  .rank-fill{transition:none}
+  .rank-fill,.driver-fill,.driver-card{transition:none}
+  .driver-card.top-priority{transform:none}
 }
 </style>
 </head>
@@ -287,6 +308,11 @@ footer a{color:#ffd166}
 <div class='viz-card'><h3>Hottest Versus Most Dangerous</h3><p class='note'>Neighbourhoods toward the upper right combine stronger heat with higher people-risk. Jade Gardens sits far right; Kampong Lama sits highest.</p><div id='hazardScatter' class='scatter-wrap'></div></div>
 </div>
 <p id='riskNote' class='risk-note'></p>
+<section class='driver-panel' aria-labelledby='driverPanelTitle'>
+<h3 id='driverPanelTitle'>Why Each Neighbourhood Ranks Here</h3>
+<p class='note driver-intro'>Each card breaks a neighbourhood's risk into the three things that make it: how dangerous the heat is, how many people are exposed, and how vulnerable they are. That is why the hottest places are not always the highest risk.</p>
+<div id='driverCards' class='driver-cards'></div>
+</section>
 <h3>Time-of-Day Robustness Check</h3>
 <p class='note'>Heat stress is not only an afternoon problem. Under +2.5°C, WBGT-screening hours remain high into evening and night, so worker protections and public-health outreach need to cover recovery time as well as daytime peaks.</p>
 <div id='timeHighlights' class='time-cards' aria-label='Time of day heat-stress highlights'></div>
@@ -429,7 +455,7 @@ function computeRows(){
 }
 function render(){
   const state=computeRows();
-  renderSentence(state);renderBars(state);renderScatter(state);renderNumbers(state);renderTime(state.scenario);renderRiskNote(state);
+  renderSentence(state);renderBars(state);renderScatter(state);renderDriverCards(state);renderNumbers(state);renderTime(state.scenario);renderRiskNote(state);
 }
 function renderSentence({rows,scenario,metric}){
   const topRisk=rows[0];
@@ -468,6 +494,22 @@ function renderScatter({rows,metric}){
     ${points}
     <text class="svg-small" x="${ml}" y="${mt+10}">Metric: ${escapeHtml(shortMetricLabel(metric))}</text>
   </svg>`;
+}
+function renderDriverCards({rows}){
+  const stableRows=[...rows].sort((a,b)=>a.grid-b.grid);
+  document.getElementById('driverCards').innerHTML=stableRows.map(r=>{
+    const drivers=[
+      {label:'Hazard',value:r.hazardScaled,className:'hazard'},
+      {label:'Exposure',value:r.exposure,className:'exposure'},
+      {label:'Vulnerability',value:r.vulnerability,className:'vulnerability'}
+    ];
+    const bars=drivers.map(driver=>`<div class="driver-row"><span>${driver.label}</span><span class="driver-track" aria-hidden="true"><span class="driver-fill ${driver.className}" style="--w:${Math.max(0,Math.round(driver.value*100))}%"></span></span><span class="driver-value">${fmt(driver.value)}</span></div>`).join('');
+    return `<article class="driver-card ${r.riskRank===1?'top-priority':''}" aria-label="${escapeHtml(r.name)} risk drivers">
+      <div class="driver-head"><div><span class="driver-name">${escapeHtml(r.name)}</span><span class="rank-sub"><span class="type-chip ${r.type}">${r.type}</span></span></div><span class="driver-rank">${r.riskRank===1?'Top priority':'Rank '+r.riskRank}</span></div>
+      <div class="driver-score">Risk score ${fmt(r.riskScaled)}</div>
+      ${bars}
+    </article>`;
+  }).join('');
 }
 function renderNumbers({rows}){
   document.querySelector('#interactiveTable tbody').innerHTML=rows.map(r=>`<tr class="${r.riskRank===1?'rank1':''}"><td>${r.riskRank}</td><th scope="row">${escapeHtml(r.name)}</th><td class="${r.type}">${r.type}</td><td>${r.raw}</td><td>${fmt(r.hazardScaled)}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td>${fmt(r.riskScaled)}</td></tr>`).join('');
