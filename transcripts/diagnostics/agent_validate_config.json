@@ -1,0 +1,31 @@
+{
+  "config": "uda-city.yml",
+  "deprecations": [],
+  "forcing": "forcing/present_hot_humid/UDA_2024_data_60.txt",
+  "gridiv_sequence": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "ignored_keys": [],
+  "ok": true,
+  "output_groups": [
+    "SUEWS",
+    "DailyState"
+  ],
+  "physics": {
+    "emissions": 0,
+    "net_radiation": 3,
+    "ohm_inc_qf": 0,
+    "storage_heat": 1
+  },
+  "schema_version": "2026.5",
+  "sites": 10
+}

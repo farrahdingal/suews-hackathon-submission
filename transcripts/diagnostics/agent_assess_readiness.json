@@ -1,0 +1,52 @@
+{
+  "canonical_config": "uda-city.yml",
+  "dataset": "UDA-city",
+  "files": {
+    "agent_manifest.yml": {
+      "exists": true,
+      "size_bytes": 3740
+    },
+    "forcing/future_hot_humid/UDA_2024_data_60.txt": {
+      "exists": true,
+      "size_bytes": 415365
+    },
+    "forcing/present_hot_humid/UDA_2024_data_60.txt": {
+      "exists": true,
+      "size_bytes": 415365
+    },
+    "neighbourhoods.yml": {
+      "exists": true,
+      "size_bytes": 4475
+    },
+    "risk_bridge.md": {
+      "exists": true,
+      "size_bytes": 4354
+    },
+    "risk_bridge.py": {
+      "exists": true,
+      "size_bytes": 8110
+    },
+    "scenarios.yml": {
+      "exists": true,
+      "size_bytes": 2767
+    },
+    "socioeconomic.csv": {
+      "exists": true,
+      "size_bytes": 568
+    },
+    "uda-city.yml": {
+      "exists": true,
+      "size_bytes": 879199
+    }
+  },
+  "n_neighbourhoods": 10,
+  "ok": true,
+  "scenario_ids": [
+    "present_hot_humid",
+    "future_hot_humid"
+  ],
+  "socioeconomic_rows": 10,
+  "supy_requirement": "supy >= 2026.6.5 (2026.4.3 aborts at runtime)",
+  "supy_requirement_met": true,
+  "supy_version": "2026.6.5"
+}
