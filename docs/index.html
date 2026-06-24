@@ -161,6 +161,7 @@ details summary::-webkit-details-marker{display:none}
 .rank-row{display:grid;grid-template-columns:42px minmax(170px,.9fr) 98px minmax(360px,1.6fr);gap:16px;align-items:center;padding:16px;border:1px solid transparent;border-radius:8px;hyphens:none;overflow-wrap:normal;word-break:normal}
 .rank-row.top-priority{background:#fff8eb;border-color:#f4ca87;box-shadow:none}
 .rank-number{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:white;border:1px solid var(--line);font-weight:900;color:var(--slate)}
+.rank-number.tied{border-color:var(--gold)}
 .rank-name{font-weight:850;color:var(--slate)}
 .rank-sub{display:block;color:var(--muted);font-size:12px;font-weight:600}
 .rank-name,.rank-sub,.driver-row span{hyphens:none;overflow-wrap:normal;word-break:keep-all}
@@ -441,7 +442,18 @@ function computeRows(){
   });
   const scoreVals=rows.map(r=>r.score);
   rows=rows.map(r=>({...r,riskScaled:scale01(r.score,scoreVals)})).sort((a,b)=>b.riskScaled-a.riskScaled||b.raw-a.raw||typeOrder[a.type]-typeOrder[b.type]);
-  rows.forEach((r,i)=>r.riskRank=i+1);
+  const rankCounts=new Map();
+  rows.forEach(r=>{
+    r.riskKey=Number(r.riskScaled).toFixed(3);
+    rankCounts.set(r.riskKey,(rankCounts.get(r.riskKey)||0)+1);
+  });
+  let lastKey=null,currentRank=0;
+  rows.forEach((r,i)=>{
+    if(r.riskKey!==lastKey){currentRank=i+1;lastKey=r.riskKey}
+    r.riskRank=currentRank;
+    r.riskTied=rankCounts.get(r.riskKey)>1;
+    r.riskRankLabel=r.riskTied?`=${currentRank}`:String(currentRank);
+  });
   return {rows,scenario,metric,weights:{hw,ew,vw},rawVals};
 }
 function render(){
@@ -451,24 +463,25 @@ function render(){
 function renderSentence({rows,scenario,metric}){
   const topRisk=rows[0];
   const topHazard=[...rows].sort((a,b)=>b.raw-a.raw)[0];
-  const hazardRiskRank=rows.find(r=>r.name===topHazard.name).riskRank;
+  const hazardRiskRow=rows.find(r=>r.name===topHazard.name);
+  const hazardRiskRank=hazardRiskRow.riskTied?`tied ${ordinal(hazardRiskRow.riskRank)}`:ordinal(hazardRiskRow.riskRank);
   const scenarioText=scenario==='present'?'present hot-humid scenario':'official +2.5°C stress test';
   const same=topRisk.name===topHazard.name;
   document.getElementById('liveSentence').textContent=same
     ? `With these settings in the ${scenarioText}, ${topRisk.name} is both the strongest heat-signal neighbourhood and the top people-risk priority.`
-    : `With these settings in the ${scenarioText}, ${topRisk.name} is the top people-risk priority; the strongest heat signal, ${topHazard.name}, ranks ${ordinal(hazardRiskRank)} by people-risk score.`;
+    : `With these settings in the ${scenarioText}, ${topRisk.name} is the top people-risk priority; the strongest heat signal, ${topHazard.name}, ranks ${hazardRiskRank} by people-risk score.`;
 }
 function renderRankedRows({rows,metric}){
   document.getElementById('riskBars').innerHTML=rows.map((r,i)=>{
-    const zeroText=(r.riskScaled===0&&r.exposure===0)?'<span class="zero-note">Low exposure in this synthetic dataset forces the geometric-mean risk score to zero while exposure is weighted.</span>':'';
+    const zeroText=(r.riskScaled===0&&r.exposure===0&&rows.findIndex(row=>row.riskScaled===0&&row.exposure===0)===i)?'<span class="zero-note">Exposure-zero rows in this tied group are forced to risk score zero while exposure is weighted.</span>':'';
     const drivers=[
       {label:'Hazard',value:r.hazardScaled,className:'hazard'},
       {label:'Exposure',value:r.exposure,className:'exposure'},
       {label:'Vulnerability',value:r.vulnerability,className:'vulnerability'}
     ];
     const bars=drivers.map(driver=>`<div class="driver-row"><span>${driver.label}</span><span class="driver-track" aria-hidden="true"><span class="driver-fill ${driver.className}" style="--w:${Math.max(0,Math.round(driver.value*100))}%"></span></span><span class="driver-value">${fmt(driver.value)}</span></div>`).join('');
-    return `<div class="rank-row ${i===0?'top-priority':''}">
-      <div class="rank-number">${i+1}</div>
+    return `<div class="rank-row ${r.riskRank===1?'top-priority':''}">
+      <div class="rank-number ${r.riskTied?'tied':''}" title="${r.riskTied?'Tied rank':'Rank'}">${r.riskRankLabel}</div>
       <div><span class="rank-name">${escapeHtml(r.name)}</span><span class="rank-sub"><span class="type-chip ${r.type}">${r.type}</span> ${r.raw} ${metricLabel(metric)}</span>${zeroText}</div>
       <div class="rank-score"><span class="rank-score-label">Risk score</span> ${Number(r.riskScaled).toFixed(3)}</div>
       <div class="rank-drivers">${bars}</div>
@@ -493,7 +506,7 @@ function renderScatter({rows,metric}){
   </svg>`;
 }
 function renderNumbers({rows}){
-  document.querySelector('#interactiveTable tbody').innerHTML=rows.map(r=>`<tr class="${r.riskRank===1?'rank1':''}"><td>${r.riskRank}</td><th scope="row">${escapeHtml(r.name)}</th><td class="${r.type}">${r.type}</td><td>${r.raw}</td><td>${fmt(r.hazardScaled)}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td>${fmt(r.riskScaled)}</td></tr>`).join('');
+  document.querySelector('#interactiveTable tbody').innerHTML=rows.map(r=>`<tr class="${r.riskRank===1?'rank1':''}"><td>${r.riskRankLabel}</td><th scope="row">${escapeHtml(r.name)}</th><td class="${r.type}">${r.type}</td><td>${r.raw}</td><td>${fmt(r.hazardScaled)}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td>${fmt(r.riskScaled)}</td></tr>`).join('');
 }
 function renderRiskNote({weights}){
   const exposureActive=weights.ew>0;
