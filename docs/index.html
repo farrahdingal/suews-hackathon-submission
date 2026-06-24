@@ -5,7 +5,107 @@
 <meta name='viewport' content='width=device-width,initial-scale=1'>
 <title>Final SUEWS Community Hackathon Submission - Farrah Jasmine Dingal</title>
 <style>
-:root{--slate:#2D3142;--gold:#F7B538;--orange:#E85D04;--sky:#5DADE2;--green:#09a25c;--wave:#0558a5;--ink:#17212a;--muted:#586675;--line:#d8e1e8;--paper:#f7fafb;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}a{color:var(--wave);font-weight:650}.hero{background:linear-gradient(135deg,#fff8e6,#eef7fb 48%,#eefaf4);border-bottom:1px solid var(--line)}.hero-inner{max-width:1180px;margin:auto;padding:34px;display:grid;grid-template-columns:116px 1fr;gap:24px;align-items:center}.mark{width:112px;filter:drop-shadow(0 12px 18px rgba(45,49,66,.12))}.eyebrow{color:var(--wave);text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:800;margin:0 0 6px}h1{font-size:34px;line-height:1.08;margin:0 0 10px;color:var(--slate)}.subtitle{font-size:17px;color:#334251;max-width:980px;margin:0}main{max-width:1180px;margin:auto;padding:28px 34px 60px}h2{margin:38px 0 12px;color:var(--slate);font-size:22px}h3{margin:18px 0 7px;color:var(--slate);font-size:16px}.metrics,.grid2,.grid3{display:grid;gap:14px}.metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:24px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.metric,.card,.answer,.interactive{background:white;border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 8px 22px rgba(45,49,66,.05)}.answer{border-left:6px solid var(--orange)}.metric b{display:block;font-size:29px;color:var(--slate)}.metric span,.note{color:var(--muted)}table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);box-shadow:0 8px 22px rgba(45,49,66,.04)}caption{text-align:left;padding:8px 0 10px;color:var(--muted)}th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f0f5f8;color:#3b4a58;font-size:12px;text-transform:uppercase}td{font-size:13px}.hotspot{color:var(--orange);font-weight:800}.core{color:var(--wave);font-weight:800}.refuge{color:var(--green);font-weight:800}.downloads{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.downloads a{display:inline-block;border:1px solid var(--line);background:white;padding:7px 10px;border-radius:999px;text-decoration:none}code{background:#edf2f5;padding:1px 4px;border-radius:4px}li{margin:6px 0}.controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 16px}.control{background:#f5f8fa;border:1px solid var(--line);border-radius:8px;padding:11px}.control label{display:block;font-weight:750;color:var(--slate);font-size:13px;margin-bottom:6px}.control select,.control input[type='range']{width:100%}.control output{font-weight:800;color:var(--wave)}.bar{height:9px;background:#e7edf1;border-radius:999px;overflow:hidden;min-width:90px}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--orange));border-radius:999px}.summaryline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:8px 0 14px}.summaryline div{background:#f8fbfc;border:1px solid var(--line);border-radius:8px;padding:10px}.summaryline b{display:block;color:var(--slate)}.pill{display:inline-block;border-radius:999px;padding:2px 8px;background:#edf2f5;color:#354656;font-size:12px;font-weight:750}.rank1{background:#fff7ec}.compare td:first-child{font-weight:750;color:var(--slate)}footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}@media(max-width:950px){.hero-inner,main{padding:22px 20px}.hero-inner,.metrics,.grid2,.grid3,.controls,.summaryline{grid-template-columns:1fr}h1{font-size:28px}table{display:block;overflow-x:auto;white-space:nowrap}}
+:root{
+  --slate:#2D3142;--gold:#F7B538;--orange:#E85D04;--sky:#5DADE2;--green:#09a25c;--wave:#0558a5;
+  --ink:#17212a;--muted:#586675;--line:#d8e1e8;--paper:#f7fafb;--white:#fff;
+  --shadow:0 10px 28px rgba(45,49,66,.07);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+a{color:var(--wave);font-weight:650}
+.hero{background:linear-gradient(135deg,#fff8e6,#eef7fb 48%,#eefaf4);border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1180px;margin:auto;padding:34px;display:grid;grid-template-columns:116px 1fr;gap:24px;align-items:center}
+.mark{width:112px;filter:drop-shadow(0 12px 18px rgba(45,49,66,.12))}
+.eyebrow{color:var(--wave);text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:800;margin:0 0 6px}
+h1{font-size:34px;line-height:1.08;margin:0 0 10px;color:var(--slate)}
+.subtitle{font-size:17px;color:#334251;max-width:980px;margin:0}
+main{max-width:1180px;margin:auto;padding:28px 34px 60px}
+h2{margin:38px 0 12px;color:var(--slate);font-size:22px}
+h3{margin:18px 0 7px;color:var(--slate);font-size:16px}
+.metrics,.grid2,.grid3{display:grid;gap:14px}
+.metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:24px}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.metric,.card,.answer,.interactive{background:white;border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:var(--shadow)}
+.answer{border-left:6px solid var(--orange)}
+.metric b{display:block;font-size:29px;color:var(--slate)}
+.metric span,.note{color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);box-shadow:0 8px 22px rgba(45,49,66,.04)}
+caption{text-align:left;padding:8px 0 10px;color:var(--muted)}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f0f5f8;color:#3b4a58;font-size:12px;text-transform:uppercase}
+td{font-size:13px}
+.hotspot{color:var(--orange);font-weight:800}.core{color:var(--wave);font-weight:800}.refuge{color:var(--green);font-weight:800}
+.downloads{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.downloads a{display:inline-block;border:1px solid var(--line);background:white;padding:7px 10px;border-radius:999px;text-decoration:none}
+code{background:#edf2f5;padding:1px 4px;border-radius:4px}
+li{margin:6px 0}
+.pill{display:inline-block;border-radius:999px;padding:2px 8px;background:#edf2f5;color:#354656;font-size:12px;font-weight:750}
+.rank1{background:#fff7ec}.compare td:first-child{font-weight:750;color:var(--slate)}
+
+.interactive{padding:0;overflow:hidden}
+.explorer-hero{padding:22px 22px 18px;background:linear-gradient(135deg,#fffaf0,#f5fbfd 56%,#f3fbf7);border-bottom:1px solid var(--line)}
+.explorer-hero h2{margin:0 0 8px;font-size:24px}
+.explorer-question{margin:0;color:#344451;font-size:17px;max-width:850px}
+.explorer-insight{margin:12px 0 0;padding:12px 14px;border-left:5px solid var(--orange);background:rgba(255,255,255,.72);border-radius:6px;color:#263642;font-weight:650}
+.term-note{margin-top:12px;max-width:940px}
+.term-note summary,.numbers-panel summary{cursor:pointer;font-weight:800;color:var(--wave);outline-offset:4px}
+.term-note dl{display:grid;grid-template-columns:150px 1fr;gap:8px 14px;margin:10px 0 0}
+.term-note dt{font-weight:800;color:var(--slate)}
+.term-note dd{margin:0;color:#465666}
+.explorer-body{padding:18px 22px 22px}
+.controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.control{background:#f8fbfc;border:1px solid var(--line);border-radius:8px;padding:12px;min-height:118px}
+.control label{display:block;font-weight:800;color:var(--slate);font-size:14px;margin-bottom:6px}
+.control select,.control input[type='range']{width:100%}
+.control select{border:1px solid #b9c9d5;border-radius:6px;background:white;padding:8px;color:var(--ink)}
+.control input[type='range']{accent-color:var(--wave)}
+.control output{font-weight:850;color:var(--wave)}
+.helper{display:block;margin-top:7px;color:var(--muted);font-size:12px;line-height:1.35}
+.live-sentence{margin:4px 0 16px;padding:14px 16px;background:#eef7fb;border:1px solid #c9e3f0;border-radius:8px;color:#20313e;font-size:17px;font-weight:750}
+.explorer-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:16px;align-items:stretch}
+.viz-card{background:white;border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 8px 22px rgba(45,49,66,.04)}
+.viz-card h3{margin:0 0 5px;font-size:17px}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+.legend span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fafcfd;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:750;color:#394a57}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;border:2px solid currentColor;background:white}
+.type-chip{border:1px solid currentColor;border-radius:999px;padding:1px 7px;font-size:12px;font-weight:850;background:white}
+.rank-bars{display:grid;gap:8px}
+.rank-row{display:grid;grid-template-columns:34px minmax(126px,1fr) minmax(130px,2.3fr) 74px;gap:10px;align-items:center;padding:8px;border:1px solid transparent;border-radius:8px}
+.rank-row.top-priority{background:#fff8eb;border-color:#f4ca87}
+.rank-number{font-weight:900;color:var(--slate);text-align:right}
+.rank-name{font-weight:850;color:var(--slate)}
+.rank-sub{display:block;color:var(--muted);font-size:12px;font-weight:600}
+.rank-track{height:18px;background:#e9f0f4;border-radius:999px;overflow:hidden;position:relative}
+.rank-fill{height:100%;width:var(--w);border-radius:999px;transition:width .55s ease;background:var(--wave)}
+.rank-fill.hotspot{background:var(--orange)}.rank-fill.core{background:var(--wave)}.rank-fill.refuge{background:var(--green)}
+.rank-score{font-variant-numeric:tabular-nums;font-weight:850;color:#243541;text-align:right}
+.zero-note{font-size:11px;color:#6b7784}
+.scatter-wrap{width:100%;overflow:hidden}
+.scatter-svg{width:100%;height:auto;display:block}
+.axis{stroke:#728190;stroke-width:1}.gridline{stroke:#e1e8ee;stroke-width:1}.point{stroke:white;stroke-width:2}
+.point.hotspot{fill:var(--orange)}.point.core{fill:var(--wave)}.point.refuge{fill:var(--green)}
+.point-ring{fill:none;stroke:var(--slate);stroke-width:2.5}
+.svg-label{font:12px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#263642;font-weight:750}
+.svg-small{font:11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#5b6b78}
+.time-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+.time-card{border:1px solid var(--line);border-radius:8px;background:#fbfdfe;padding:10px}
+.time-card b{display:block;color:var(--slate)}
+.time-card span{color:var(--muted);font-size:12px}
+.risk-note{margin:14px 0 0;padding:11px 12px;border:1px dashed #cbd7df;border-radius:8px;background:#fbfdfe;color:#536270}
+.numbers-panel{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.numbers-panel table{margin-top:10px;box-shadow:none}
+footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+@media(max-width:980px){
+  .hero-inner,main{padding:22px 20px}
+  .hero-inner,.metrics,.grid2,.grid3,.controls,.explorer-grid,.time-cards{grid-template-columns:1fr}
+  h1{font-size:28px}
+  table{display:block;overflow-x:auto;white-space:nowrap}
+  .rank-row{grid-template-columns:30px minmax(115px,1fr) minmax(100px,1.4fr) 58px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rank-fill{transition:none}
+}
 </style>
 </head>
 <body>
@@ -20,7 +120,35 @@
 <h2>UDA-city SUEWS Configuration And Assumptions</h2><div class='grid2'><div class='card'><p>The workflow uses <code>uda-city.yml</code>, the official ten-site synthetic hot-humid city config from <a href='https://github.com/UMEP-dev/uda-city-hackathon'>UMEP-dev/uda-city-hackathon</a>. All neighbourhoods share the same forcing; differences come from morphology, land cover, and socio-economic sidecars.</p></div><div class='card'><p>Locked physics: NARP net radiation, classic OHM storage heat, QF/emissions off, and SUEWS/SuPy runtime <code>2026.6.5</code>. The required <code>assess_readiness</code> and <code>validate_config</code> SUEWS-agent calls passed before SUEWS was run.</p></div></div>
 <h2>Official Present And +2.5 C Future Method</h2><p>The present scenario uses <code>forcing/present_hot_humid/UDA_2024_data_60.txt</code>. The future scenario uses <code>forcing/future_hot_humid/UDA_2024_data_60.txt</code>, the official humidity-preserving +2.5 K pseudo-warming: air temperature is raised uniformly, relative humidity is held constant, longwave down is scaled for a warmer atmosphere, and wind, pressure, shortwave, and rain are unchanged. This is a stress test, not a downscaled climate projection.</p>
 <h2>Hazard, Exposure, Vulnerability, And Risk Indicator</h2><div class='grid2'><div class='card'><h3>Hazard</h3><p>The modelled heat condition from SUEWS. The core hazard is dangerous-heat hours: post-spin-up hours where hourly mean 2 m air temperature, <code>T2</code>, exceeds 35 C in each neighbourhood.</p><h3>Exposure</h3><p>Who or what is present in the affected neighbourhoods. Here it is daytime population density from the UDA-city sidecar, scaled across the ten neighbourhoods.</p></div><div class='card'><h3>Vulnerability</h3><p>Why some exposed people may be more at risk. The index combines older age, young children, low air-conditioning access, outdoor work, and deprivation from the synthetic socio-economic sidecar.</p><h3>Combination rule</h3><p>Each pillar is min-max scaled to 0-1 and combined as <code>risk_index = (hazard * exposure * vulnerability)^(1/3)</code>, then scaled again to 0-1 for ranking. The geometric mean is conservative: weak exposure or vulnerability lowers risk even where hazard is high.</p></div></div>
-<h2>Interactive Risk Explorer</h2><section class='interactive'><p class='note'>Use these levers to explore interpretation choices using the completed SUEWS outputs. The controls do not rerun SUEWS; they show how the priority ranking changes when the hazard metric or the risk weighting changes.</p><div class='controls'><div class='control'><label for='scenario'>Scenario</label><select id='scenario'><option value='present'>Present hot-humid</option><option value='future'>+2.5 C future</option></select></div><div class='control'><label for='metric'>Hazard signal</label><select id='metric'><option value='dry'>Dry-bulb T2 &gt; 35 C</option><option value='wbgt'>WBGT screening proxy &gt;= 35 C</option><option value='sunny'>Hot, sunny, low-wind hours</option></select></div><div class='control'><label for='hazardWeight'>Hazard weight: <output id='hazardOut'>1</output></label><input id='hazardWeight' type='range' min='0' max='3' step='0.25' value='1'></div><div class='control'><label for='exposureWeight'>Exposure weight: <output id='exposureOut'>1</output></label><input id='exposureWeight' type='range' min='0' max='3' step='0.25' value='1'></div><div class='control'><label for='vulnerabilityWeight'>Vulnerability weight: <output id='vulnerabilityOut'>1</output></label><input id='vulnerabilityWeight' type='range' min='0' max='3' step='0.25' value='1'></div></div><div id='interactiveSummary' class='summaryline'></div><table id='interactiveTable'><caption>Rankings update as the levers change. A higher score means a higher relative priority within these ten neighbourhoods.</caption><thead><tr><th>Priority</th><th>Neighbourhood</th><th>Type</th><th>Hazard signal</th><th>Exposure</th><th>Vulnerability</th><th>Risk score</th></tr></thead><tbody></tbody></table><h3>Time-of-day robustness check</h3><p class='note'>The table below groups neighbourhoods by type. It shows why a humidity-aware screen matters: future dry-bulb danger remains daytime, but the WBGT screening proxy stays high into evening and night, when bodies and homes need recovery time.</p><table id='timeTable'><thead><tr><th>Type</th><th>Time of day</th><th>Dry-bulb danger hours</th><th>WBGT screen hours</th><th>Hot sunny low-wind hours</th><th>Max T2</th><th>Max WBGT proxy</th></tr></thead><tbody></tbody></table></section>
+<h2>Interactive Risk Explorer</h2><section class='interactive explorer' aria-labelledby='explorer-title'>
+<div class='explorer-hero'>
+<h2 id='explorer-title'>If you change what counts as risk, who needs help first?</h2>
+<p class='explorer-question'>Move the levers to compare heat, who is exposed, and who is more vulnerable. The key finding is visible before any numbers: the hottest neighbourhood is not automatically the most dangerous to people.</p>
+<p class='explorer-insight'>Core insight: Jade Gardens is the hottest place in the dry-bulb SUEWS results, but Kampong Lama becomes the top people-risk priority once exposure and vulnerability are included.</p>
+<details class='term-note'><summary>Quick definitions in everyday language</summary><dl><dt>Dry-bulb T2</dt><dd>The regular 2 m air temperature from SUEWS, like a shaded thermometer reading.</dd><dt>WBGT screen</dt><dd>A heat-stress screening estimate that adds humidity, sun, and wind. It is useful for worker-safety thinking, but it is not a field-measured WBGT instrument reading.</dd><dt>Exposure</dt><dd>How many people are present in the neighbourhood during the day.</dd><dt>Vulnerability</dt><dd>Why exposed people may be less able to cope, such as older age, young children, low air-conditioning access, outdoor work, or deprivation.</dd></dl></details>
+</div>
+<div class='explorer-body'>
+<div class='controls' aria-label='Risk explorer controls'>
+<div class='control'><label for='scenario'>Scenario</label><select id='scenario'><option value='present'>Present hot-humid</option><option value='future'>+2.5 C future</option></select><span class='helper'>Switch between today's simulated heat and the official hotter stress test.</span></div>
+<div class='control'><label for='metric'>Heat signal</label><select id='metric'><option value='dry'>Dry-bulb T2 &gt; 35 C</option><option value='wbgt'>WBGT screening proxy &gt;= 35 C</option><option value='sunny'>Hot, sunny, low-wind hours</option></select><span class='helper'>Choose what counts as the heat hazard. WBGT adds humidity, sun, and wind to the story.</span></div>
+<div class='control'><label for='hazardWeight'>Heat weight: <output id='hazardOut'>1</output></label><input id='hazardWeight' type='range' min='0' max='3' step='0.25' value='1'><span class='helper'>Higher means the model prioritises the physical heat signal more.</span></div>
+<div class='control'><label for='exposureWeight'>People-present weight: <output id='exposureOut'>1</output></label><input id='exposureWeight' type='range' min='0' max='3' step='0.25' value='1'><span class='helper'>Higher means crowded daytime neighbourhoods count more.</span></div>
+<div class='control'><label for='vulnerabilityWeight'>Coping-difficulty weight: <output id='vulnerabilityOut'>1</output></label><input id='vulnerabilityWeight' type='range' min='0' max='3' step='0.25' value='1'><span class='helper'>Higher means age, low AC access, outdoor work, and deprivation count more.</span></div>
+</div>
+<p id='liveSentence' class='live-sentence' role='status' aria-live='polite'></p>
+<div class='explorer-grid'>
+<div class='viz-card'><h3>People-risk priority ranking</h3><p class='note'>Longer bars mean higher relative risk under the current lever settings. Type labels are shown beside colour so the chart is not colour-only.</p><div class='legend'><span><i class='dot hotspot'></i>hotspot</span><span><i class='dot core'></i>core</span><span><i class='dot refuge'></i>refuge</span></div><div id='riskBars' class='rank-bars' aria-label='Neighbourhood risk ranking'></div></div>
+<div class='viz-card'><h3>Hottest versus most dangerous</h3><p class='note'>Each dot is a neighbourhood. Right means a stronger heat signal; up means a higher people-risk score.</p><div id='hazardScatter' class='scatter-wrap'></div></div>
+</div>
+<p id='riskNote' class='risk-note'></p>
+<h3>Time-of-day robustness check</h3>
+<p class='note'>The cards summarise when heat stress appears by neighbourhood type. This keeps the worker-safety and night-recovery story visible without making the main explorer a spreadsheet.</p>
+<div id='timeHighlights' class='time-cards' aria-label='Time of day heat-stress highlights'></div>
+<details class='numbers-panel'><summary>Show the numbers</summary>
+<table id='interactiveTable'><caption>Technical table for the current lever settings. Risk score is the weighted geometric mean of min-max scaled hazard, exposure, and vulnerability, then rescaled from 0 to 1.</caption><thead><tr><th>Priority</th><th>Neighbourhood</th><th>Type</th><th>Hazard signal</th><th>Scaled hazard</th><th>Exposure</th><th>Vulnerability</th><th>Risk score</th></tr></thead><tbody></tbody></table>
+<table id='timeTable'><caption>Detailed time-of-day heat-stress summary for the selected scenario.</caption><thead><tr><th>Type</th><th>Time of day</th><th>Dry-bulb danger hours</th><th>WBGT screen hours</th><th>Hot sunny low-wind hours</th><th>Max T2</th><th>Max WBGT proxy</th></tr></thead><tbody></tbody></table>
+</details>
+</div></section>
 <h2>WBGT, HHI, And Time Of Day</h2><div class='grid3'><div class='card'><h3>WBGT</h3><p>Wet Bulb Globe Temperature is the stronger occupational heat-stress standard for outdoor workers because it accounts for temperature, humidity, radiant heat, and wind. This page adds a humidity-aware WBGT screening proxy from SUEWS <code>T2</code>, <code>RH2</code>, <code>U10</code>, and <code>Kdown</code>, but it is not a full measured WBGT. A full WBGT assessment would use a field monitor or a validated globe-temperature model, consistent with <a href='https://www.osha.gov/heat-exposure/hazards'>OSHA guidance</a>.</p></div><div class='card'><h3>HHI</h3><p>The CDC Heat &amp; Health Tracker points toward the right public-health framing: combine heat, population health, environmental conditions, and social vulnerability. A literal Heat and Health Index was not computed because UDA-city is synthetic and not a ZIP-code health dataset. Instead, this analysis uses the HHI logic to make exposure and vulnerability explicit in the socio-economic risk bridge.</p></div><div class='card'><h3>Time of day</h3><p>Present dry-bulb dangerous hours are concentrated in morning and afternoon. Under +2.5 C, daytime danger intensifies, and the WBGT screening proxy indicates reduced evening and night recovery, especially in hotspot neighbourhoods. That strengthens recommendations for work-rest timing, overnight cooling, and evening outreach.</p></div></div>
 <h2>Defended Choices And Caveats</h2><p>I use hourly mean <code>T2 &gt; 35 C</code> after 14 spin-up days for the core hazard because it is simple, reproducible, and consistent with the UDA-city reference bridge. The WBGT screen and time-of-day tables are robustness checks from the same completed SUEWS outputs, not a replacement for the core threshold. SUEWS gives environmental hazard, not health outcomes. The socio-economic layer is synthetic, min-max scaling is relative to this dataset, neighbourhood averages hide individuals, and QF is off so population affects exposure rather than modelled anthropogenic heat.</p>
 <h2>Heat Hazard And Risk Result</h2><table><caption>Plain-English summary of the core dry-bulb hazard and people-risk result. The risk rank combines hazard, exposure, and vulnerability; it is not the same as hottest rank.</caption><thead><tr><th>Neighbourhood</th><th>Type</th><th>Present hazard hours</th><th>Future hazard hours</th><th>Added hours</th><th>Risk priority now</th><th>Risk priority future</th><th>Plain-English read</th></tr></thead><tbody><tr><td>Jade Gardens</td><td class='refuge'>refuge</td><td>62</td><td>260</td><td>198</td><td>7</td><td>7</td><td>Physically hottest, but low people-risk in this relative dataset because exposure is low.</td></tr><tr><td>Serendib Rise</td><td class='refuge'>refuge</td><td>26</td><td>205</td><td>179</td><td>7</td><td>7</td><td>Substantial future warming, but low priority in this risk index because exposure is low.</td></tr><tr><td>Taman Melati</td><td class='refuge'>refuge</td><td>47</td><td>243</td><td>196</td><td>7</td><td>7</td><td>Hot refuge area; hazard is high, but the hazard-to-people bridge is weak here.</td></tr><tr class='rank1'><td>Kampong Lama</td><td class='hotspot'>hotspot</td><td>42</td><td>249</td><td>207</td><td>1</td><td>1</td><td>Highest people-risk priority now and in the future.</td></tr><tr><td>Dhobi Lines</td><td class='hotspot'>hotspot</td><td>26</td><td>217</td><td>191</td><td>2</td><td>3</td><td>High exposure and vulnerability turn moderate-to-high hazard into high risk.</td></tr><tr><td>Lusitano Square</td><td class='core'>core</td><td>5</td><td>129</td><td>124</td><td>5</td><td>5</td><td>Moderate exposure but lower vulnerability keeps risk below the hotspot group.</td></tr><tr><td>Mlima Moto</td><td class='hotspot'>hotspot</td><td>5</td><td>149</td><td>144</td><td>4</td><td>4</td><td>Risk grows strongly when future hazard rises over a very vulnerable exposed population.</td></tr><tr><td>Victoria Exchange</td><td class='core'>core</td><td>5</td><td>120</td><td>115</td><td>6</td><td>6</td><td>Core area with lower vulnerability, so it is not a top risk priority in this framing.</td></tr><tr><td>Fuzhou Lanes</td><td class='hotspot'>hotspot</td><td>22</td><td>212</td><td>190</td><td>3</td><td>2</td><td>Becomes the second-highest future risk priority because vulnerability is very high.</td></tr><tr><td>Zheng He Towers</td><td class='core'>core</td><td>2</td><td>77</td><td>75</td><td>7</td><td>7</td><td>Lowest dry-bulb hazard and lowest vulnerability score in this dataset.</td></tr></tbody></table><div class='downloads'><a href='data/hazard_risk_summary.csv'>hazard_risk_summary.csv</a><a href='data/risk_present.csv'>risk_present.csv</a><a href='data/risk_future.csv'>risk_future.csv</a><a href='data/heat_stress_screen_summary.csv'>heat_stress_screen_summary.csv</a><a href='data/heat_stress_time_of_day_by_type.csv'>heat_stress_time_of_day_by_type.csv</a><a href='data/heat_stress_time_of_day.csv'>heat_stress_time_of_day.csv</a></div>
@@ -51,12 +179,93 @@ const timeRows=[
 {scenario:'present',type:'hotspot',band:'Afternoon 12-18',dry:42,wbgt:793,sunny:42,maxT:37.98,maxWbgt:38.64},{scenario:'present',type:'hotspot',band:'Evening 18-24',dry:0,wbgt:76,sunny:0,maxT:31.58,maxWbgt:35.72},{scenario:'present',type:'hotspot',band:'Morning 06-12',dry:53,wbgt:580,sunny:53,maxT:37.65,maxWbgt:38.73},{scenario:'present',type:'hotspot',band:'Night 00-06',dry:0,wbgt:0,sunny:0,maxT:29.88,maxWbgt:34.69},
 {scenario:'present',type:'refuge',band:'Afternoon 12-18',dry:47,wbgt:647,sunny:46,maxT:39.64,maxWbgt:39.53},{scenario:'present',type:'refuge',band:'Evening 18-24',dry:0,wbgt:61,sunny:0,maxT:31.56,maxWbgt:35.73},{scenario:'present',type:'refuge',band:'Morning 06-12',dry:88,wbgt:525,sunny:88,maxT:39.96,maxWbgt:39.64},{scenario:'present',type:'refuge',band:'Night 00-06',dry:0,wbgt:0,sunny:0,maxT:29.83,maxWbgt:34.68}
 ];
+const typeOrder={hotspot:0,core:1,refuge:2};
 function rawMetric(row,scenario,metric){return metric==='dry'?row[scenario].hours:metric==='wbgt'?row[scenario].wbgt:row[scenario].sunny}
-function metricLabel(metric){return metric==='dry'?'dangerous-heat hours':metric==='wbgt'?'WBGT screening hours':'hot sunny low-wind hours'}
-function norm(value,values){const min=Math.min(...values),max=Math.max(...values);return max===min?0:value/(max)}
-function fmt(n){return Number(n).toFixed(3).replace(/\.000$/,'')}
-function render(){const scenario=document.getElementById('scenario').value,metric=document.getElementById('metric').value;const hw=+document.getElementById('hazardWeight').value,ew=+document.getElementById('exposureWeight').value,vw=+document.getElementById('vulnerabilityWeight').value;document.getElementById('hazardOut').value=hw;document.getElementById('exposureOut').value=ew;document.getElementById('vulnerabilityOut').value=vw;const rawVals=neighbourhoods.map(r=>rawMetric(r,scenario,metric));let rows=neighbourhoods.map(r=>{const h=norm(rawMetric(r,scenario,metric),rawVals);const wsum=hw+ew+vw;let score=wsum===0?h:Math.pow(Math.pow(h,hw)*Math.pow(r.exposure,ew)*Math.pow(r.vulnerability,vw),1/wsum);return {...r,raw:rawMetric(r,scenario,metric),hazardNorm:h,score};});const maxScore=Math.max(...rows.map(r=>r.score));rows=rows.map(r=>({...r,scaled:maxScore===0?0:r.score/maxScore})).sort((a,b)=>b.scaled-a.scaled||b.raw-a.raw);const topRisk=rows[0];const topHazard=[...rows].sort((a,b)=>b.raw-a.raw)[0];const original=[...neighbourhoods].sort((a,b)=>a[scenario].rank-b[scenario].rank)[0];document.getElementById('interactiveSummary').innerHTML=`<div><b>Highest hazard signal</b>${topHazard.name}<br><span class='pill'>${topHazard.raw} ${metricLabel(metric)}</span></div><div><b>Highest priority with these levers</b>${topRisk.name}<br><span class='pill'>risk score ${fmt(topRisk.scaled)}</span></div><div><b>Original core-risk leader</b>${original.name}<br><span class='pill'>T2 &gt; 35 C, equal weights</span></div>`;document.querySelector('#interactiveTable tbody').innerHTML=rows.map((r,i)=>`<tr class='${i===0?'rank1':''}'><td>${i+1}</td><td>${r.name}</td><td class='${r.type}'>${r.type}</td><td>${r.raw}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td><div class='bar'><span style='width:${Math.max(2,Math.round(r.scaled*100))}%'></span></div>${fmt(r.scaled)}</td></tr>`).join('');renderTime(scenario)}
-function renderTime(scenario){const order={hotspot:0,core:1,refuge:2};document.querySelector('#timeTable tbody').innerHTML=timeRows.filter(r=>r.scenario===scenario).sort((a,b)=>order[a.type]-order[b.type]||a.band.localeCompare(b.band)).map(r=>`<tr><td class='${r.type}'>${r.type}</td><td>${r.band}</td><td>${r.dry}</td><td>${r.wbgt}</td><td>${r.sunny}</td><td>${r.maxT.toFixed(2)} C</td><td>${r.maxWbgt.toFixed(2)} C</td></tr>`).join('')}
-['scenario','metric','hazardWeight','exposureWeight','vulnerabilityWeight'].forEach(id=>document.getElementById(id).addEventListener('input',render));render();
+function metricLabel(metric){return metric==='dry'?'dry-bulb dangerous-heat hours':metric==='wbgt'?'WBGT screening hours':'hot, sunny, low-wind hours'}
+function shortMetricLabel(metric){return metric==='dry'?'dry-bulb T2 heat':metric==='wbgt'?'WBGT screening heat stress':'hot sunny low-wind heat'}
+function minMax(value,values){const min=Math.min(...values),max=Math.max(...values);return max===min?0:(value-min)/(max-min)}
+function scale01(value,values){const min=Math.min(...values),max=Math.max(...values);return max===min?0:(value-min)/(max-min)}
+function fmt(n,digits=3){return Number(n).toFixed(digits).replace(/\.?0+$/,'')}
+function ordinal(n){const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0])}
+function escapeHtml(text){return String(text).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function computeRows(){
+  const scenario=document.getElementById('scenario').value,metric=document.getElementById('metric').value;
+  const hw=+document.getElementById('hazardWeight').value,ew=+document.getElementById('exposureWeight').value,vw=+document.getElementById('vulnerabilityWeight').value;
+  document.getElementById('hazardOut').value=fmt(hw,2);document.getElementById('exposureOut').value=fmt(ew,2);document.getElementById('vulnerabilityOut').value=fmt(vw,2);
+  const rawVals=neighbourhoods.map(r=>rawMetric(r,scenario,metric));
+  let rows=neighbourhoods.map(r=>{
+    const hazardScaled=minMax(rawMetric(r,scenario,metric),rawVals);
+    const wsum=hw+ew+vw;
+    const score=wsum===0?hazardScaled:Math.pow(Math.pow(hazardScaled,hw)*Math.pow(r.exposure,ew)*Math.pow(r.vulnerability,vw),1/wsum);
+    return {...r,scenario,metric,raw:rawMetric(r,scenario,metric),hazardScaled,score};
+  });
+  const scoreVals=rows.map(r=>r.score);
+  rows=rows.map(r=>({...r,riskScaled:scale01(r.score,scoreVals)})).sort((a,b)=>b.riskScaled-a.riskScaled||b.raw-a.raw||typeOrder[a.type]-typeOrder[b.type]);
+  rows.forEach((r,i)=>r.riskRank=i+1);
+  return {rows,scenario,metric,weights:{hw,ew,vw},rawVals};
+}
+function render(){
+  const state=computeRows();
+  renderSentence(state);renderBars(state);renderScatter(state);renderNumbers(state);renderTime(state.scenario);renderRiskNote(state);
+}
+function renderSentence({rows,scenario,metric}){
+  const topRisk=rows[0];
+  const topHazard=[...rows].sort((a,b)=>b.raw-a.raw)[0];
+  const hazardRiskRank=rows.find(r=>r.name===topHazard.name).riskRank;
+  const scenarioText=scenario==='present'?'present hot-humid scenario':'official +2.5 C stress test';
+  const same=topRisk.name===topHazard.name;
+  document.getElementById('liveSentence').textContent=same
+    ? `With these settings in the ${scenarioText}, ${topRisk.name} is both the strongest heat-signal neighbourhood and the top people-risk priority.`
+    : `With these settings in the ${scenarioText}, ${topRisk.name} is the top people-risk priority; the strongest heat signal, ${topHazard.name}, ranks ${ordinal(hazardRiskRank)} by people-risk score.`;
+}
+function renderBars({rows,metric}){
+  document.getElementById('riskBars').innerHTML=rows.map((r,i)=>{
+    const zeroText=(r.riskScaled===0&&r.exposure===0)?'<span class="zero-note">Low exposure in this synthetic dataset forces the geometric-mean risk score to zero while exposure is weighted.</span>':'';
+    return `<div class="rank-row ${i===0?'top-priority':''}">
+      <div class="rank-number">${i+1}</div>
+      <div><span class="rank-name">${escapeHtml(r.name)}</span><span class="rank-sub"><span class="type-chip ${r.type}">${r.type}</span> ${r.raw} ${metricLabel(metric)}</span>${zeroText}</div>
+      <div class="rank-track" aria-hidden="true"><div class="rank-fill ${r.type}" style="--w:${Math.max(1,Math.round(r.riskScaled*100))}%"></div></div>
+      <div class="rank-score">${fmt(r.riskScaled)}</div>
+    </div>`;
+  }).join('');
+}
+function renderScatter({rows,metric}){
+  const width=620,height=360,ml=58,mr=26,mt=24,mb=54;
+  const sx=x=>ml+x*(width-ml-mr), sy=y=>mt+(1-y)*(height-mt-mb);
+  const topRisk=rows[0], topHazard=[...rows].sort((a,b)=>b.raw-a.raw)[0];
+  const points=rows.map(r=>{
+    const x=sx(r.hazardScaled), y=sy(r.riskScaled), label=(r.name==='Jade Gardens'||r.name==='Kampong Lama');
+    return `<g><circle class="point ${r.type}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${label?7:5}"><title>${escapeHtml(r.name)}: heat ${fmt(r.hazardScaled)}, risk ${fmt(r.riskScaled)}</title></circle>${(r.name===topRisk.name||r.name===topHazard.name)?`<circle class="point-ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="10"></circle>`:''}${label?`<text class="svg-label" x="${Math.min(x+10,width-130).toFixed(1)}" y="${(y-8).toFixed(1)}">${escapeHtml(r.name)}</text>`:''}</g>`;
+  }).join('');
+  document.getElementById('hazardScatter').innerHTML=`<svg class="scatter-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="Scatter plot of heat signal versus people-risk score">
+    <line class="gridline" x1="${ml}" y1="${sy(.5)}" x2="${width-mr}" y2="${sy(.5)}"></line><line class="gridline" x1="${sx(.5)}" y1="${mt}" x2="${sx(.5)}" y2="${height-mb}"></line>
+    <line class="axis" x1="${ml}" y1="${height-mb}" x2="${width-mr}" y2="${height-mb}"></line><line class="axis" x1="${ml}" y1="${mt}" x2="${ml}" y2="${height-mb}"></line>
+    <text class="svg-small" x="${ml}" y="${height-18}">weaker heat signal</text><text class="svg-small" x="${width-170}" y="${height-18}">stronger heat signal</text>
+    <text class="svg-small" transform="translate(18 ${height/2+60}) rotate(-90)">higher people-risk score</text>
+    ${points}
+    <text class="svg-small" x="${ml}" y="${mt+10}">Metric: ${escapeHtml(shortMetricLabel(metric))}</text>
+  </svg>`;
+}
+function renderNumbers({rows}){
+  document.querySelector('#interactiveTable tbody').innerHTML=rows.map(r=>`<tr class="${r.riskRank===1?'rank1':''}"><td>${r.riskRank}</td><td>${escapeHtml(r.name)}</td><td class="${r.type}">${r.type}</td><td>${r.raw}</td><td>${fmt(r.hazardScaled)}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td>${fmt(r.riskScaled)}</td></tr>`).join('');
+}
+function renderRiskNote({weights}){
+  const exposureActive=weights.ew>0;
+  document.getElementById('riskNote').textContent=exposureActive
+    ? 'Important caveat: the refuge neighbourhoods have exposure = 0 in the synthetic socio-economic sidecar. Under the geometric mean, that makes their people-risk score zero whenever exposure has weight, even if they are physically hot. This is shown deliberately rather than hidden.'
+    : 'Exposure is currently weighted at zero, so refuge neighbourhoods are no longer forced to zero by the synthetic exposure layer. This is useful for exploring assumptions, but the submitted core risk framing keeps exposure active.';
+}
+function renderTime(scenario){
+  const rows=timeRows.filter(r=>r.scenario===scenario);
+  const byType=['hotspot','core','refuge'].map(type=>({type,rows:rows.filter(r=>r.type===type)}));
+  document.getElementById('timeHighlights').innerHTML=byType.map(group=>{
+    const peakDry=group.rows.reduce((a,b)=>b.dry>a.dry?b:a,group.rows[0]);
+    const peakWbgt=group.rows.reduce((a,b)=>b.wbgt>a.wbgt?b:a,group.rows[0]);
+    return `<div class="time-card"><b><span class="${group.type}">${group.type}</span></b><span>Most dry-bulb danger: ${peakDry.band}, ${peakDry.dry} hours.<br>Highest WBGT screen: ${peakWbgt.band}, ${peakWbgt.wbgt} hours.</span></div>`;
+  }).join('')+`<div class="time-card"><b>Why it matters</b><span>${scenario==='future'?'Future humidity-screening hours remain high into evening and night, pointing to weaker recovery time.':'Present dry-bulb danger is mainly morning and afternoon, while WBGT screening adds evening caution.'}</span></div>`;
+  document.querySelector('#timeTable tbody').innerHTML=rows.sort((a,b)=>typeOrder[a.type]-typeOrder[b.type]||a.band.localeCompare(b.band)).map(r=>`<tr><td class="${r.type}">${r.type}</td><td>${r.band}</td><td>${r.dry}</td><td>${r.wbgt}</td><td>${r.sunny}</td><td>${r.maxT.toFixed(2)} C</td><td>${r.maxWbgt.toFixed(2)} C</td></tr>`).join('');
+}
+['scenario','metric','hazardWeight','exposureWeight','vulnerabilityWeight'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+render();
 </script>
 </body></html>
