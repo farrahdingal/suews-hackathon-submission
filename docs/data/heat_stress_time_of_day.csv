@@ -1,0 +1,81 @@
+scenario,gridiv,name,type,time_band,dangerous_heat_hours,wbgt35_screen_hours,hot_sunny_low_wind_hours,mean_t2_c,max_t2_c,max_wbgt_shade_proxy_c
+present,1,Jade Gardens,refuge,afternoon_12_18,24,223,23,31.39,39.64,39.53
+present,1,Jade Gardens,refuge,evening_18_24,0,21,0,28.64,31.56,35.73
+present,1,Jade Gardens,refuge,morning_06_12,38,183,38,30.71,39.96,39.64
+present,1,Jade Gardens,refuge,night_00_06,0,0,0,27.76,29.83,34.68
+present,2,Serendib Rise,refuge,afternoon_12_18,8,205,8,31.13,38.6,38.98
+present,2,Serendib Rise,refuge,evening_18_24,0,19,0,28.6,31.42,35.7
+present,2,Serendib Rise,refuge,morning_06_12,18,162,18,30.37,38.62,39.11
+present,2,Serendib Rise,refuge,night_00_06,0,0,0,27.71,29.8,34.66
+present,3,Taman Melati,refuge,afternoon_12_18,15,219,15,31.3,39.38,39.39
+present,3,Taman Melati,refuge,evening_18_24,0,21,0,28.62,31.5,35.72
+present,3,Taman Melati,refuge,morning_06_12,32,180,32,30.6,39.59,39.51
+present,3,Taman Melati,refuge,night_00_06,0,0,0,27.74,29.82,34.67
+present,4,Kampong Lama,hotspot,afternoon_12_18,19,218,19,31.32,37.98,38.64
+present,4,Kampong Lama,hotspot,evening_18_24,0,21,0,28.65,31.58,35.72
+present,4,Kampong Lama,hotspot,morning_06_12,23,169,23,30.62,37.65,38.73
+present,4,Kampong Lama,hotspot,night_00_06,0,0,0,27.76,29.88,34.69
+present,5,Dhobi Lines,hotspot,afternoon_12_18,12,204,12,31.18,37.48,38.37
+present,5,Dhobi Lines,hotspot,evening_18_24,0,20,0,28.62,31.49,35.7
+present,5,Dhobi Lines,hotspot,morning_06_12,14,151,14,30.43,37.14,38.46
+present,5,Dhobi Lines,hotspot,night_00_06,0,0,0,27.73,29.86,34.68
+present,6,Lusitano Square,core,afternoon_12_18,3,169,3,30.87,36.25,37.77
+present,6,Lusitano Square,core,evening_18_24,0,17,0,28.56,31.37,35.66
+present,6,Lusitano Square,core,morning_06_12,2,114,2,29.96,36.06,37.82
+present,6,Lusitano Square,core,night_00_06,0,0,0,27.66,29.78,34.64
+present,7,Mlima Moto,hotspot,afternoon_12_18,3,171,3,30.93,36.2,37.67
+present,7,Mlima Moto,hotspot,evening_18_24,0,17,0,28.56,31.37,35.65
+present,7,Mlima Moto,hotspot,morning_06_12,2,115,2,30.03,35.81,37.72
+present,7,Mlima Moto,hotspot,night_00_06,0,0,0,27.65,29.79,34.64
+present,8,Victoria Exchange,core,afternoon_12_18,3,166,3,30.84,36.02,37.65
+present,8,Victoria Exchange,core,evening_18_24,0,16,0,28.54,31.34,35.63
+present,8,Victoria Exchange,core,morning_06_12,2,102,2,29.9,35.8,37.7
+present,8,Victoria Exchange,core,night_00_06,0,0,0,27.63,29.75,34.62
+present,9,Fuzhou Lanes,hotspot,afternoon_12_18,8,200,8,31.13,37.29,38.28
+present,9,Fuzhou Lanes,hotspot,evening_18_24,0,18,0,28.59,31.41,35.68
+present,9,Fuzhou Lanes,hotspot,morning_06_12,14,145,14,30.36,36.95,38.38
+present,9,Fuzhou Lanes,hotspot,night_00_06,0,0,0,27.69,29.83,34.66
+present,10,Zheng He Towers,core,afternoon_12_18,2,146,2,30.72,35.12,37.21
+present,10,Zheng He Towers,core,evening_18_24,0,15,0,28.51,31.29,35.6
+present,10,Zheng He Towers,core,morning_06_12,0,78,0,29.69,34.8,37.16
+present,10,Zheng He Towers,core,night_00_06,0,0,0,27.6,29.71,34.59
+future,1,Jade Gardens,refuge,afternoon_12_18,141,462,58,33.9,42.2,43.03
+future,1,Jade Gardens,refuge,evening_18_24,0,439,0,31.14,34.08,39.27
+future,1,Jade Gardens,refuge,morning_06_12,119,455,103,33.23,42.51,43.14
+future,1,Jade Gardens,refuge,night_00_06,0,389,0,30.26,32.34,38.21
+future,2,Serendib Rise,refuge,afternoon_12_18,111,462,65,33.64,41.15,42.48
+future,2,Serendib Rise,refuge,evening_18_24,0,436,0,31.1,33.93,39.24
+future,2,Serendib Rise,refuge,morning_06_12,94,454,87,32.88,41.16,42.62
+future,2,Serendib Rise,refuge,night_00_06,0,378,0,30.21,32.31,38.2
+future,3,Taman Melati,refuge,afternoon_12_18,130,462,58,33.81,41.94,42.89
+future,3,Taman Melati,refuge,evening_18_24,0,439,0,31.13,34.03,39.26
+future,3,Taman Melati,refuge,morning_06_12,113,455,99,33.12,42.13,43.02
+future,3,Taman Melati,refuge,night_00_06,0,384,0,30.24,32.33,38.21
+future,4,Kampong Lama,hotspot,afternoon_12_18,138,462,59,33.83,40.52,42.14
+future,4,Kampong Lama,hotspot,evening_18_24,0,440,0,31.14,34.1,39.26
+future,4,Kampong Lama,hotspot,morning_06_12,111,454,102,33.13,40.19,42.24
+future,4,Kampong Lama,hotspot,night_00_06,0,391,0,30.27,32.39,38.22
+future,5,Dhobi Lines,hotspot,afternoon_12_18,120,462,64,33.69,40.02,41.87
+future,5,Dhobi Lines,hotspot,evening_18_24,0,438,0,31.12,34.0,39.25
+future,5,Dhobi Lines,hotspot,morning_06_12,97,453,92,32.95,39.66,41.97
+future,5,Dhobi Lines,hotspot,night_00_06,0,379,0,30.23,32.37,38.21
+future,6,Lusitano Square,core,afternoon_12_18,77,462,61,33.37,38.77,41.27
+future,6,Lusitano Square,core,evening_18_24,0,435,0,31.06,33.87,39.2
+future,6,Lusitano Square,core,morning_06_12,52,451,51,32.47,38.58,41.33
+future,6,Lusitano Square,core,night_00_06,0,370,0,30.16,32.29,38.17
+future,7,Mlima Moto,hotspot,afternoon_12_18,86,462,65,33.43,38.71,41.16
+future,7,Mlima Moto,hotspot,evening_18_24,0,435,0,31.06,33.87,39.19
+future,7,Mlima Moto,hotspot,morning_06_12,63,451,62,32.54,38.32,41.23
+future,7,Mlima Moto,hotspot,night_00_06,0,369,0,30.16,32.3,38.17
+future,8,Victoria Exchange,core,afternoon_12_18,73,462,57,33.34,38.53,41.15
+future,8,Victoria Exchange,core,evening_18_24,0,434,0,31.04,33.85,39.18
+future,8,Victoria Exchange,core,morning_06_12,47,450,46,32.41,38.32,41.21
+future,8,Victoria Exchange,core,night_00_06,0,368,0,30.13,32.26,38.16
+future,9,Fuzhou Lanes,hotspot,afternoon_12_18,117,462,68,33.64,39.82,41.78
+future,9,Fuzhou Lanes,hotspot,evening_18_24,0,437,0,31.09,33.92,39.22
+future,9,Fuzhou Lanes,hotspot,morning_06_12,95,453,91,32.87,39.48,41.89
+future,9,Fuzhou Lanes,hotspot,night_00_06,0,375,0,30.19,32.34,38.19
+future,10,Zheng He Towers,core,afternoon_12_18,48,462,40,33.22,37.63,40.86
+future,10,Zheng He Towers,core,evening_18_24,0,432,0,31.01,33.8,39.14
+future,10,Zheng He Towers,core,morning_06_12,29,446,29,32.2,37.32,40.66
+future,10,Zheng He Towers,core,night_00_06,0,361,0,30.1,32.21,38.13
