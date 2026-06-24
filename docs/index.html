@@ -150,7 +150,7 @@ details summary::-webkit-details-marker{display:none}
 .control output{font-weight:850;color:var(--wave)}
 .helper{display:block;margin-top:8px;color:var(--muted);font-size:12px;line-height:1.35}
 .live-sentence{margin:0 0 24px;padding:16px;background:#f7fbff;border:1px solid #c9e3f0;border-left:5px solid var(--wave);border-radius:8px;color:#20313e;font-size:17px;font-weight:800;box-shadow:none}
-.explorer-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:16px;align-items:stretch}
+.explorer-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
 .viz-card{background:#fbfdff;border:0;border-radius:8px;padding:16px;box-shadow:none}
 .viz-card h3{margin:0 0 8px;font-size:17px}
 .legend{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
@@ -158,15 +158,15 @@ details summary::-webkit-details-marker{display:none}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;border:2px solid currentColor;background:white}
 .type-chip{border:1px solid currentColor;border-radius:999px;padding:1px 7px;font-size:12px;font-weight:850;background:white}
 .rank-bars{display:grid;gap:8px}
-.rank-row{display:grid;grid-template-columns:34px minmax(126px,1fr) minmax(130px,2.3fr) 74px;gap:8px;align-items:center;padding:8px;border:1px solid transparent;border-radius:8px}
+.rank-row{display:grid;grid-template-columns:42px minmax(170px,.9fr) 98px minmax(360px,1.6fr);gap:16px;align-items:center;padding:16px;border:1px solid transparent;border-radius:8px;hyphens:none;overflow-wrap:normal;word-break:normal}
 .rank-row.top-priority{background:#fff8eb;border-color:#f4ca87;box-shadow:none}
-.rank-number{font-weight:900;color:var(--slate);text-align:right}
+.rank-number{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:white;border:1px solid var(--line);font-weight:900;color:var(--slate)}
 .rank-name{font-weight:850;color:var(--slate)}
 .rank-sub{display:block;color:var(--muted);font-size:12px;font-weight:600}
-.rank-track{height:18px;background:#e9f0f4;border-radius:999px;overflow:hidden;position:relative}
-.rank-fill{height:100%;width:var(--w);border-radius:999px;transition:width .55s ease;background:var(--wave)}
-.rank-fill.hotspot{background:var(--orange)}.rank-fill.core{background:var(--wave)}.rank-fill.refuge{background:var(--green)}
-.rank-score{font-variant-numeric:tabular-nums;font-weight:850;color:#243541;text-align:right}
+.rank-name,.rank-sub,.driver-row span{hyphens:none;overflow-wrap:normal;word-break:keep-all}
+.rank-score{font-variant-numeric:tabular-nums;font-weight:900;color:#243541;text-align:left}
+.rank-score-label{display:block;color:var(--muted);font-size:11px;font-weight:750;line-height:1.2}
+.rank-drivers{display:grid;gap:8px;min-width:0}
 .zero-note{font-size:11px;color:#6b7784}
 .scatter-wrap{width:100%;overflow:visible}
 .scatter-svg{width:100%;height:auto;display:block}
@@ -180,18 +180,9 @@ details summary::-webkit-details-marker{display:none}
 .time-card b{display:block;color:var(--slate)}
 .time-card span{color:var(--muted);font-size:12px}
 .risk-note{margin:16px 0 0;padding:16px;border:1px dashed #cbd7df;border-radius:8px;background:#fbfdfe;color:#536270}
-.driver-panel{margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdfe);box-shadow:none}
-.driver-panel h3{margin-top:0}
 .driver-intro{margin:0 0 16px;max-width:960px}
-.driver-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:16px}
-.driver-card{border:1px solid color-mix(in srgb,var(--line) 72%,white);border-radius:8px;background:#fbfdff;padding:16px;box-shadow:none;transition:border-color .3s ease,background-color .3s ease,transform .3s ease}
-.driver-card.top-priority{border-color:var(--gold);background:#fff8eb;box-shadow:none;transform:translateY(-1px)}
-.driver-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.driver-name{display:block;color:var(--slate);font-weight:900;line-height:1.2}
-.driver-rank{white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:#f8fbfd;color:#344655;padding:2px 7px;font-size:11px;font-weight:850}
-.top-priority .driver-rank{border-color:var(--gold);background:#fff8eb;color:#6f4500}
-.driver-score{margin:16px 0 8px;color:var(--slate);font-weight:900;font-variant-numeric:tabular-nums}
-.driver-row{display:grid;grid-template-columns:72px minmax(0,1fr) 40px;gap:8px;align-items:center;margin-top:8px;font-size:12px;color:#455462}
+.driver-row{display:grid;grid-template-columns:88px minmax(0,1fr) 44px;gap:8px;align-items:center;font-size:12px;color:#455462}
+.driver-row span:first-child{white-space:nowrap}
 .driver-track{height:8px;border-radius:999px;background:color-mix(in srgb,var(--line) 58%,white);overflow:hidden}
 .driver-fill{display:block;height:100%;width:var(--w);border-radius:999px;background:var(--wave);transition:width .45s ease}
 .driver-fill.hazard{background:var(--orange)}
@@ -211,21 +202,20 @@ footer a{color:#ffd166}
   h1{font-size:42px}
   .mark{width:104px}
   table{display:block;overflow-x:auto;white-space:nowrap}
-  .rank-row{grid-template-columns:30px minmax(115px,1fr) minmax(100px,1.4fr) 58px}
-  .driver-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rank-row{grid-template-columns:38px minmax(0,1fr) 98px;gap:12px;align-items:start}
+  .rank-drivers{grid-column:2/4}
 }
 @media(max-width:620px){
   h1{font-size:34px}
   .metrics{margin-top:-34px}
   .explorer-hero,.explorer-body{padding-left:18px;padding-right:18px}
   .term-note dl{grid-template-columns:1fr}
-  .rank-row{grid-template-columns:28px 1fr 62px}
-  .rank-track{grid-column:2/4}
-  .driver-cards{grid-template-columns:1fr}
+  .rank-row{grid-template-columns:34px 1fr;gap:8px;padding:12px}
+  .rank-score,.rank-drivers{grid-column:2}
+  .driver-row{grid-template-columns:84px minmax(0,1fr) 42px}
 }
 @media(prefers-reduced-motion:reduce){
-  .rank-fill,.driver-fill,.driver-card,.term-note summary::before,.numbers-panel summary::before{transition:none}
-  .driver-card.top-priority{transform:none}
+  .driver-fill,.term-note summary::before,.numbers-panel summary::before{transition:none}
 }
 </style>
 </head>
@@ -310,17 +300,10 @@ footer a{color:#ffd166}
 </div>
 <p id='liveSentence' class='live-sentence' role='status' aria-live='polite'></p>
 <div class='explorer-grid'>
-<div class='viz-card'><h3>People-Risk Priority Ranking</h3><p class='note'>Higher bars mark neighbourhoods where heat, exposure, and vulnerability overlap most strongly. Type labels identify hotspots, cores, and refuges without relying on colour alone.</p><div class='legend'><span><i class='dot hotspot'></i>hotspot</span><span><i class='dot core'></i>core</span><span><i class='dot refuge'></i>refuge</span></div><div id='riskBars' class='rank-bars' aria-label='Neighbourhood risk ranking'></div></div>
+<div class='viz-card'><h3>People-Risk Priority Ranking</h3><p class='note driver-intro'>Each row breaks a neighbourhood's risk into the three things that make it: how dangerous the heat is, how many people are exposed, and how vulnerable they are. That is why the hottest places are not always the highest risk.</p><div class='legend'><span><i class='dot hotspot'></i>hotspot</span><span><i class='dot core'></i>core</span><span><i class='dot refuge'></i>refuge</span></div><div id='riskBars' class='rank-bars' aria-label='Neighbourhood risk ranking'></div></div>
 <details class='numbers-panel'><summary>Show the heat-vs-risk scatter</summary><div class='viz-card'><h3>Hottest Versus Most Dangerous</h3><p class='note'>Neighbourhoods toward the upper right combine stronger heat with higher people-risk. Jade Gardens sits far right; Kampong Lama sits highest.</p><div id='hazardScatter' class='scatter-wrap'></div></div></details>
 </div>
 <p id='riskNote' class='risk-note'></p>
-<section class='driver-panel' aria-labelledby='driverPanelTitle'>
-<h3 id='driverPanelTitle'>Why Each Neighbourhood Ranks Here</h3>
-<p class='note driver-intro'>Each card breaks a neighbourhood's risk into the three things that make it: how dangerous the heat is, how many people are exposed, and how vulnerable they are. That is why the hottest places are not always the highest risk.</p>
-<p class='note driver-intro'>Risk needs all three bars together:  the score is a geometric mean, one short bar drags it down however tall the others stand. That is why Kampong Lama leads with hazard, exposure, and vulnerability all high at once, Jade Gardens is the hottest place yet ranks low because almost no one is exposed there, and Mlima Moto, already maxed on exposure and vulnerability, turns dangerous only as future heat supplies the missing third.</p>
-<p class='helper'>Each bar is scaled 0–1 across these ten neighbourhoods, where a full bar means highest here, not high in absolute terms.</p>
-<div id='driverCards' class='driver-cards'></div>
-</section>
 <h3>Time-of-Day Robustness Check</h3>
 <p class='note'>Heat stress is not only an afternoon problem. Under +2.5°C, WBGT-screening hours remain high into evening and night, so worker protections and public-health outreach need to cover recovery time as well as daytime peaks.</p>
 <div id='timeHighlights' class='time-cards' aria-label='Time of day heat-stress highlights'></div>
@@ -463,7 +446,7 @@ function computeRows(){
 }
 function render(){
   const state=computeRows();
-  renderSentence(state);renderBars(state);renderScatter(state);renderDriverCards(state);renderNumbers(state);renderTime(state.scenario);renderRiskNote(state);
+  renderSentence(state);renderRankedRows(state);renderScatter(state);renderNumbers(state);renderTime(state.scenario);renderRiskNote(state);
 }
 function renderSentence({rows,scenario,metric}){
   const topRisk=rows[0];
@@ -475,14 +458,20 @@ function renderSentence({rows,scenario,metric}){
     ? `With these settings in the ${scenarioText}, ${topRisk.name} is both the strongest heat-signal neighbourhood and the top people-risk priority.`
     : `With these settings in the ${scenarioText}, ${topRisk.name} is the top people-risk priority; the strongest heat signal, ${topHazard.name}, ranks ${ordinal(hazardRiskRank)} by people-risk score.`;
 }
-function renderBars({rows,metric}){
+function renderRankedRows({rows,metric}){
   document.getElementById('riskBars').innerHTML=rows.map((r,i)=>{
     const zeroText=(r.riskScaled===0&&r.exposure===0)?'<span class="zero-note">Low exposure in this synthetic dataset forces the geometric-mean risk score to zero while exposure is weighted.</span>':'';
+    const drivers=[
+      {label:'Hazard',value:r.hazardScaled,className:'hazard'},
+      {label:'Exposure',value:r.exposure,className:'exposure'},
+      {label:'Vulnerability',value:r.vulnerability,className:'vulnerability'}
+    ];
+    const bars=drivers.map(driver=>`<div class="driver-row"><span>${driver.label}</span><span class="driver-track" aria-hidden="true"><span class="driver-fill ${driver.className}" style="--w:${Math.max(0,Math.round(driver.value*100))}%"></span></span><span class="driver-value">${fmt(driver.value)}</span></div>`).join('');
     return `<div class="rank-row ${i===0?'top-priority':''}">
       <div class="rank-number">${i+1}</div>
       <div><span class="rank-name">${escapeHtml(r.name)}</span><span class="rank-sub"><span class="type-chip ${r.type}">${r.type}</span> ${r.raw} ${metricLabel(metric)}</span>${zeroText}</div>
-      <div class="rank-track" aria-hidden="true"><div class="rank-fill ${r.type}" style="--w:${Math.max(1,Math.round(r.riskScaled*100))}%"></div></div>
-      <div class="rank-score">${fmt(r.riskScaled)}</div>
+      <div class="rank-score"><span class="rank-score-label">Risk score</span> ${Number(r.riskScaled).toFixed(3)}</div>
+      <div class="rank-drivers">${bars}</div>
     </div>`;
   }).join('');
 }
@@ -502,22 +491,6 @@ function renderScatter({rows,metric}){
     ${points}
     <text class="svg-small" x="${ml}" y="${mt+10}">Metric: ${escapeHtml(shortMetricLabel(metric))}</text>
   </svg>`;
-}
-function renderDriverCards({rows}){
-  const stableRows=[...rows].sort((a,b)=>a.grid-b.grid);
-  document.getElementById('driverCards').innerHTML=stableRows.map(r=>{
-    const drivers=[
-      {label:'Hazard',value:r.hazardScaled,className:'hazard'},
-      {label:'Exposure',value:r.exposure,className:'exposure'},
-      {label:'Vulnerability',value:r.vulnerability,className:'vulnerability'}
-    ];
-    const bars=drivers.map(driver=>`<div class="driver-row"><span>${driver.label}</span><span class="driver-track" aria-hidden="true"><span class="driver-fill ${driver.className}" style="--w:${Math.max(0,Math.round(driver.value*100))}%"></span></span><span class="driver-value">${fmt(driver.value)}</span></div>`).join('');
-    return `<article class="driver-card ${r.riskRank===1?'top-priority':''}" aria-label="${escapeHtml(r.name)} risk drivers">
-      <div class="driver-head"><div><span class="driver-name">${escapeHtml(r.name)}</span><span class="rank-sub"><span class="type-chip ${r.type}">${r.type}</span></span></div><span class="driver-rank">${r.riskRank===1?'Top priority':'Rank '+r.riskRank}</span></div>
-      <div class="driver-score">Risk score ${fmt(r.riskScaled)}</div>
-      ${bars}
-    </article>`;
-  }).join('');
 }
 function renderNumbers({rows}){
   document.querySelector('#interactiveTable tbody').innerHTML=rows.map(r=>`<tr class="${r.riskRank===1?'rank1':''}"><td>${r.riskRank}</td><th scope="row">${escapeHtml(r.name)}</th><td class="${r.type}">${r.type}</td><td>${r.raw}</td><td>${fmt(r.hazardScaled)}</td><td>${fmt(r.exposure)}</td><td>${fmt(r.vulnerability)}</td><td>${fmt(r.riskScaled)}</td></tr>`).join('');
