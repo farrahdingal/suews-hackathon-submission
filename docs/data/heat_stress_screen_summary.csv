@@ -1,0 +1,21 @@
+scenario,gridiv,name,type,dangerous_heat_hours,wbgt35_screen_hours,hot_sunny_low_wind_hours,max_t2_c,max_wbgt_shade_proxy_c,max_wet_bulb_c,hottest_time_band
+present,1,Jade Gardens,refuge,62,427,61,39.96,39.64,30.37,morning_06_12
+present,2,Serendib Rise,refuge,26,386,26,38.62,39.11,30.06,morning_06_12
+present,3,Taman Melati,refuge,47,420,47,39.59,39.51,30.3,morning_06_12
+present,4,Kampong Lama,hotspot,42,408,42,37.98,38.73,29.67,morning_06_12
+present,5,Dhobi Lines,hotspot,26,375,26,37.48,38.46,29.52,morning_06_12
+present,6,Lusitano Square,core,5,300,5,36.25,37.82,29.23,afternoon_12_18
+present,7,Mlima Moto,hotspot,5,303,5,36.2,37.72,29.22,afternoon_12_18
+present,8,Victoria Exchange,core,5,284,5,36.02,37.7,29.22,afternoon_12_18
+present,9,Fuzhou Lanes,hotspot,22,363,22,37.29,38.38,29.47,morning_06_12
+present,10,Zheng He Towers,core,2,239,2,35.12,37.21,29.17,afternoon_12_18
+future,1,Jade Gardens,refuge,260,1745,161,42.51,43.14,32.57,afternoon_12_18
+future,2,Serendib Rise,refuge,205,1730,152,41.16,42.62,32.28,afternoon_12_18
+future,3,Taman Melati,refuge,243,1740,157,42.13,43.02,32.5,afternoon_12_18
+future,4,Kampong Lama,hotspot,249,1747,161,40.52,42.24,31.93,afternoon_12_18
+future,5,Dhobi Lines,hotspot,217,1732,156,40.02,41.97,31.79,afternoon_12_18
+future,6,Lusitano Square,core,129,1718,112,38.77,41.33,31.61,afternoon_12_18
+future,7,Mlima Moto,hotspot,149,1717,127,38.71,41.23,31.61,afternoon_12_18
+future,8,Victoria Exchange,core,120,1714,103,38.53,41.21,31.6,afternoon_12_18
+future,9,Fuzhou Lanes,hotspot,212,1727,159,39.82,41.89,31.75,afternoon_12_18
+future,10,Zheng He Towers,core,77,1701,69,37.63,40.86,31.56,afternoon_12_18
