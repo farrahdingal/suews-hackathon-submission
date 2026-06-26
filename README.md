@@ -22,7 +22,7 @@ CSV outputs are in `analysis/` and mirrored in `docs/data/` for page downloads. 
 - `heat_stress_time_of_day.csv`: detailed time-of-day heat-stress summary by neighbourhood.
 - `heat_stress_time_of_day_by_type.csv`: compact time-of-day summary by neighbourhood type.
 
-The SUEWS-agent tool-call log is in `transcripts/suews_agent_tool_log.md`, with a CSV copy in `transcripts/suews_agent_tool_log.csv`. Readiness and validation diagnostics are saved in `transcripts/diagnostics/`, and `transcripts/workflow_notes.md` summarises the AI-assisted workflow.
+The public Codex session transcript is in `transcripts/codex_session_transcript.md`. The SUEWS-agent tool-call log is in `transcripts/suews_agent_tool_log.md`, with a CSV copy in `transcripts/suews_agent_tool_log.csv`. Readiness and validation diagnostics are saved in `transcripts/diagnostics/`, and `transcripts/workflow_notes.md` summarises the AI-assisted workflow.
 
 Important caveat: the socio-economic layer is synthetic, risk scores are relative to these ten neighbourhoods, and the WBGT result is a screening proxy derived from completed SUEWS outputs rather than field-measured WBGT.
 

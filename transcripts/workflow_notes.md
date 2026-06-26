@@ -1,6 +1,6 @@
 # Workflow Notes
 
-This note summarises the AI-assisted workflow for the final SUEWS Community Hackathon submission by Farrah Jasmine Dingal. It complements the ordered SUEWS-agent tool-call log in `transcripts/suews_agent_tool_log.md`.
+This note summarises the AI-assisted workflow for the final SUEWS Community Hackathon submission by Farrah Jasmine Dingal. It complements the ordered SUEWS-agent tool-call log in `transcripts/suews_agent_tool_log.md` and the public session transcript in `transcripts/codex_session_transcript.md`.
 
 ## Submission Brief
 
