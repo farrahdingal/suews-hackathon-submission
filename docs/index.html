@@ -181,7 +181,7 @@ details summary::-webkit-details-marker{display:none}
 .point-ring{fill:none;stroke:var(--slate);stroke-width:2.5}
 .svg-label{font:12px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#263642;font-weight:750}
 .svg-small{font:11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#5b6b78}
-.time-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.time-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
 .time-card{border:1px solid var(--line);border-radius:8px;background:#fbfdfe;padding:16px;box-shadow:none}
 .time-card b{display:block;color:var(--slate)}
 .time-card span{color:var(--muted);font-size:12px}
@@ -539,7 +539,7 @@ function renderTime(scenario){
     const peakDry=group.rows.reduce((a,b)=>b.dry>a.dry?b:a,group.rows[0]);
     const peakWbgt=group.rows.reduce((a,b)=>b.wbgt>a.wbgt?b:a,group.rows[0]);
     return `<div class="time-card"><b><span class="${group.type}">${group.type}</span></b><span>Most dry-bulb danger: ${peakDry.band}, ${peakDry.dry} hours.<br>Highest WBGT screen: ${peakWbgt.band}, ${peakWbgt.wbgt} hours.</span></div>`;
-  }).join('')+`<div class="time-card"><b>Why it matters</b><span>${scenario==='future'?'Future humidity-screening hours remain high into evening and night, pointing to weaker recovery time.':'Present dry-bulb danger is mainly morning and afternoon, while WBGT screening adds evening caution.'}</span></div>`;
+  }).join('');
   document.querySelector('#timeTable tbody').innerHTML=rows.sort((a,b)=>typeOrder[a.type]-typeOrder[b.type]||a.band.localeCompare(b.band)).map(r=>`<tr><th scope="row" class="${r.type}">${r.type}</th><td>${r.band}</td><td>${r.dry}</td><td>${r.wbgt}</td><td>${r.sunny}</td><td>${r.maxT.toFixed(2)}°C</td><td>${r.maxWbgt.toFixed(2)}°C</td></tr>`).join('');
 }
 ['scenario','metric','hazardWeight','exposureWeight','vulnerabilityWeight'].forEach(id=>document.getElementById(id).addEventListener('input',render));
