@@ -46,6 +46,7 @@ main{max-width:1180px;margin:auto;padding:0 34px 66px}
 section[id],h2[id]{scroll-margin-top:72px}
 h2{margin:44px 0 14px;color:var(--slate);font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(1.55rem,2.4vw,2.2rem);line-height:1.2}
 h3{margin:20px 0 8px;color:var(--slate);font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.3}
+main p,footer p{text-align:justify;text-align-last:left;-webkit-hyphens:auto;hyphens:auto}
 .metrics,.grid2,.grid3{display:grid;gap:14px}
 .metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin:-48px 0 32px;position:relative;z-index:2}
 .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -133,11 +134,11 @@ li{margin:6px 0}
 .explorer-hero{padding:32px 32px 24px;color:rgba(255,255,255,.86);background:radial-gradient(circle at 12% 8%,rgba(247,181,56,.22),transparent 28%),radial-gradient(circle at 90% 20%,rgba(93,173,226,.18),transparent 32%),linear-gradient(135deg,#101827,#1a1d2e);border-bottom:0}
 .explorer-hero h2{margin:0 0 16px;font-size:clamp(1.75rem,3vw,2.45rem);line-height:1.16;color:white}
 .explorer-question{margin:0;color:rgba(255,255,255,.78);font-size:18px;max-width:920px}
-.explorer-insight{margin:16px 0 0;padding:16px;border-left:5px solid var(--gold);background:rgba(255,255,255,.07);border-radius:6px;color:rgba(255,255,255,.88);font-weight:700}
+.explorer-insight{--accent-align:21px;margin:16px 0 0 calc(var(--accent-align) * -1);width:calc(100% + var(--accent-align));padding:16px;border-left:5px solid var(--gold);background:rgba(255,255,255,.07);border-radius:6px;color:rgba(255,255,255,.88);font-weight:700}
 .term-note{margin-top:16px;max-width:940px}
 details summary{list-style:none}
 details summary::-webkit-details-marker{display:none}
-.term-note summary,.numbers-panel summary{cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:850;color:var(--wave);outline-offset:4px}
+.term-note summary,.numbers-panel summary{cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-left:-16px;font-weight:850;color:var(--wave);outline-offset:4px}
 .explorer-hero .term-note summary{color:var(--gold)}
 .term-note summary::before,.numbers-panel summary::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s ease}
 .term-note[open]>summary::before,.numbers-panel[open]>summary::before{transform:rotate(45deg)}
@@ -153,7 +154,7 @@ details summary::-webkit-details-marker{display:none}
 .control input[type='range']{accent-color:var(--wave)}
 .control output{font-weight:850;color:var(--wave)}
 .helper{display:block;margin-top:8px;color:var(--muted);font-size:12px;line-height:1.35}
-.live-sentence{margin:0 0 24px;padding:16px;background:#f7fbff;border:1px solid #c9e3f0;border-left:5px solid var(--wave);border-radius:8px;color:#20313e;font-size:17px;font-weight:800;box-shadow:none}
+.live-sentence{--accent-align:21px;margin:0 0 24px calc(var(--accent-align) * -1);width:calc(100% + var(--accent-align));padding:16px;background:#f7fbff;border:1px solid #c9e3f0;border-left:5px solid var(--wave);border-radius:8px;color:#20313e;font-size:17px;font-weight:800;box-shadow:none}
 .explorer-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
 .viz-card{background:#fbfdff;border:0;border-radius:8px;padding:16px;box-shadow:none}
 .viz-card h3{margin:0 0 8px;font-size:17px}
@@ -184,7 +185,7 @@ details summary::-webkit-details-marker{display:none}
 .time-card{border:1px solid var(--line);border-radius:8px;background:#fbfdfe;padding:16px;box-shadow:none}
 .time-card b{display:block;color:var(--slate)}
 .time-card span{color:var(--muted);font-size:12px}
-.risk-note{margin:16px 0 0;padding:16px;border:1px dashed #cbd7df;border-radius:8px;background:#fbfdfe;color:#536270}
+.risk-note{--callout-align:17px;margin:16px 0 0 calc(var(--callout-align) * -1);width:calc(100% + var(--callout-align));padding:16px;border:1px dashed #cbd7df;border-radius:8px;background:#fbfdfe;color:#536270}
 .driver-intro{margin:0 0 16px;max-width:960px}
 .driver-row{display:grid;grid-template-columns:88px minmax(0,1fr) 44px;gap:8px;align-items:center;font-size:12px;color:#455462}
 .driver-row span:first-child{white-space:nowrap}
@@ -214,6 +215,7 @@ footer a{color:#ffd166}
   h1{font-size:34px}
   .metrics{margin-top:-34px}
   .explorer-hero,.explorer-body{padding-left:18px;padding-right:18px}
+  .explorer-insight,.live-sentence{--accent-align:18px}
   .term-note dl{grid-template-columns:1fr}
   .rank-row{grid-template-columns:34px 1fr;gap:8px;padding:12px}
   .rank-score,.rank-drivers{grid-column:2}
